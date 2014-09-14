@@ -1,40 +1,38 @@
 <html>
 <head>
-<title>Passing HTML form values via Javascript to inner html!</title>
+<title>Passing HTML form values via Javascript to inner html</title>
+
 <script language="javascript">
 <!--
 function showcontact(frm){
-   var interest = "interest shown in the following patient:\n\n"
-
+   var interest = "Customer has shown interest in the following patient:\n\n"
    //for each checkbox see if it has been checked, record the value.
    for (i = 0; i < frm.patient.length; i++)
       if (frm.patient[i].checked){
          interest = interest + frm.patient[i].value + "\n"
       }
    document.getElementById("output").innerHTML = interest;
-
 }
 //-->
 </script>
 </head>
+
 <body bgcolor="#ffffff">
-
-<form name="contact">
-
-<h2>patients</h2>
-
-i like how they look:<br />
-<input type="checkbox" name="patient"  value="001" onclick="">Jane Doe<br />
-<input type="checkbox" name="patient"  value="002" onclick="">John Doe<br />
-<input type="checkbox" name="patient"  value="003" onclick="">Ted Smith<br />
-<input type="checkbox" name="patient"  value="004" onclick="">Penelope Damsel<br />
-<input type="checkbox" name="patient"  value="005" onclick="">Rick Stone<br />
-
-<input type="button" value="Please send information" onclick="showcontact(this.form)">
-
-
-<div id="output"></div>
-
-</form>
+	<div style="width: 100%; padding: 20px;">
+		<form name="contact">
+			<div style="width: 500px; padding: 20px; background-color: #3d3d3d; color: #fff; margin: auto;">
+				<h2>Patients</h2>
+				I am interested in the following looks:<br />
+				<input type="checkbox" name="patient" value="001" onclick="">Jane Doe<br />
+				<input type="checkbox" name="patient" value="002" onclick="">John Doe<br />
+				<input type="checkbox" name="patient" value="003" onclick="">Ted Smith<br />
+				<input type="checkbox" name="patient" value="004" onclick="">Penelope Damsel<br />
+				<input type="checkbox" name="patient" value="005" onclick="">Rick Stone<br />
+				<input type="button" value="Please send information" onclick="showcontact(this.form)">
+				<div id="output"></div>
+			</div>
+		</form>
+	</div>
 </body>
+
 </html>
