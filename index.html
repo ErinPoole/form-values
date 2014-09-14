@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Passing HTML form values via Javascript to inner html!</title>
+<script language="javascript">
+<!--
+function showcontact(frm){
+   var interest = "interest shown in the following patient:\n\n"
+
+   //for each checkbox see if it has been checked, record the value.
+   for (i = 0; i < frm.patient.length; i++)
+      if (frm.patient[i].checked){
+         interest = interest + frm.patient[i].value + "\n"
+      }
+   document.getElementById("output").innerHTML = interest;
+
+}
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff">
+
+<form name="contact">
+
+<h2>patients</h2>
+
+i like how they look:<br />
+<input type="checkbox" name="patient"  value="001" onclick="">Jane Doe<br />
+<input type="checkbox" name="patient"  value="002" onclick="">John Doe<br />
+<input type="checkbox" name="patient"  value="003" onclick="">Ted Smith<br />
+<input type="checkbox" name="patient"  value="004" onclick="">Penelope Damsel<br />
+<input type="checkbox" name="patient"  value="005" onclick="">Rick Stone<br />
+
+<input type="button" value="Please send information" onclick="showcontact(this.form)">
+
+
+<div id="output"></div>
+
+</form>
+</body>
+</html>
